@@ -1,0 +1,28 @@
+stages:
+  - build
+  - test
+
+build:
+  stage: build
+  image: ubuntu:22.04
+  before_script:
+    - apt-get update
+    - apt-get install -y build-essential cmake git
+  script:
+    - mkdir -p build
+    - cd build
+    - cmake ../
+    - make
+
+test:
+  stage: test
+  image: ubuntu:22.04
+  before_script:
+    - apt-get update
+    - apt-get install -y build-essential cmake git
+  script:
+    - mkdir -p build
+    - cd build
+    - cmake ../
+    - make
+    - ./src/test/VDSProject_test
