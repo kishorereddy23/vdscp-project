@@ -40,8 +40,9 @@ namespace ClassProject {
 
 
     BDD_ID Manager::topVar(BDD_ID f) {
-        return uniqueTable[f].topVar;
-    }
+    // wrong for TDD
+    return 0;
+}
 
     std::string Manager::getTopVarName(const BDD_ID &root) {
         BDD_ID top = topVar(root);
