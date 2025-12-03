@@ -5,8 +5,13 @@
 namespace ClassProject {
 
     Manager::Manager() {
-    // Temporarily empty for TDD
-    }
+    uniqueTable.clear();
+    uniqueTable.emplace_back(0, 0, 0, 0, "False");
+    falseId = 0;
+    uniqueTable.emplace_back(1, 1, 1, 1, "True");
+    trueId = 1;
+}
+
 
 
     const BDD_ID &Manager::True() {
