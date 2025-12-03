@@ -32,10 +32,10 @@ namespace ClassProject {
     }
 
     BDD_ID Manager::createVar(const std::string &label) {
-        BDD_ID newId = uniqueTable.size();
-        uniqueTable.emplace_back(newId, trueId, falseId, newId, label);
-        return newId;
-    }
+    // temporary wrong implementation for TDD
+    return 0;
+}
+
 
     BDD_ID Manager::topVar(BDD_ID f) {
         return uniqueTable[f].topVar;
