@@ -5,11 +5,9 @@
 namespace ClassProject {
 
     Manager::Manager() {
-        uniqueTable.emplace_back(0, 0, 0, 0, "False");
-        falseId = 0;
-        uniqueTable.emplace_back(1, 1, 1, 1, "True");
-        trueId = 1;
+    // Temporarily empty for TDD
     }
+
 
     const BDD_ID &Manager::True() {
         return trueId;
