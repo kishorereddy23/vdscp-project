@@ -109,27 +109,10 @@ namespace ClassProject {
     }
 
     BDD_ID Manager::ite(BDD_ID i, BDD_ID t, BDD_ID e) {
-        if (i == trueId) return t;
-        if (i == falseId) return e;
-        if (t == trueId && e == falseId) return i;
-        if (t == e) return t;
+    // broken for TDD
+    return 0;
+}
 
-        BDD_ID x = topVar(i);
-        if (!isConstant(t) && topVar(t) < x) x = topVar(t);
-        if (!isConstant(e) && topVar(e) < x) x = topVar(e);
-
-        BDD_ID iHigh = coFactorTrue(i, x);
-        BDD_ID iLow = coFactorFalse(i, x);
-        BDD_ID tHigh = coFactorTrue(t, x);
-        BDD_ID tLow = coFactorFalse(t, x);
-        BDD_ID eHigh = coFactorTrue(e, x);
-        BDD_ID eLow = coFactorFalse(e, x);
-
-        BDD_ID high = ite(iHigh, tHigh, eHigh);
-        BDD_ID low = ite(iLow, tLow, eLow);
-
-        return findOrCreateNode(high, low, x);
-    }
 
     BDD_ID Manager::and2(BDD_ID a, BDD_ID b) {
         return ite(a, b, falseId);
