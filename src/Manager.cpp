@@ -97,9 +97,11 @@ namespace ClassProject {
 
 
     BDD_ID Manager::coFactorTrue(BDD_ID f) {
-        if (isConstant(f)) return f;
-        return uniqueTable[f].high;
+    if (isConstant(f)) return f;
+    return uniqueTable[f].high;
     }
+
+
 
     BDD_ID Manager::coFactorFalse(BDD_ID f) {
         if (isConstant(f)) return f;
