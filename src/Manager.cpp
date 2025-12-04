@@ -144,8 +144,10 @@ namespace ClassProject {
 
 
     BDD_ID Manager::or2(BDD_ID a, BDD_ID b) {
-        return ite(a, trueId, b);
-    }
+    // broken for TDD
+    return 1;
+}
+
 
     BDD_ID Manager::xor2(BDD_ID a, BDD_ID b) {
         return ite(a, neg(b), b);
