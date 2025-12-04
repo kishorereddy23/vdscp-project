@@ -163,16 +163,16 @@ namespace ClassProject {
 
 
     BDD_ID Manager::nand2(BDD_ID a, BDD_ID b) {
-    return 0;  // broken
-}
+    return neg(and2(a, b));
+    }
 
-BDD_ID Manager::nor2(BDD_ID a, BDD_ID b) {
-    return 0;  // broken
-}
+    BDD_ID Manager::nor2(BDD_ID a, BDD_ID b) {
+        return neg(or2(a, b));
+    }
 
-BDD_ID Manager::xnor2(BDD_ID a, BDD_ID b) {
-    return 0;  // broken
-}
+    BDD_ID Manager::xnor2(BDD_ID a, BDD_ID b) {
+        return neg(xor2(a, b));
+    }
 
 
     void Manager::findNodes(const BDD_ID &root, std::set<BDD_ID> &nodes_of_root) {
