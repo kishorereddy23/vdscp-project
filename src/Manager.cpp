@@ -138,9 +138,9 @@ namespace ClassProject {
 
 
     BDD_ID Manager::and2(BDD_ID a, BDD_ID b) {
-    // broken for TDD
-    return 0;
-}
+    return ite(a, b, falseId);
+    }
+
 
 
     BDD_ID Manager::or2(BDD_ID a, BDD_ID b) {
