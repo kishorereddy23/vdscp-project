@@ -1,2 +1,8 @@
-gtest/
 build/
+*.o
+*.a
+.vscode/
+CMakeCache.txt
+CMakeFiles/
+*.swp
+*.log
