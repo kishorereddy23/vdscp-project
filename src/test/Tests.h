@@ -91,6 +91,20 @@ TEST_F(ManagerTest, GetTopVarName) {
     EXPECT_EQ(manager.getTopVarName(b), "b");
 }
 
+
+TEST_F(ManagerTest, IteTopVarSelection) {
+    // Assume IDs: a < b < c
+    // Make i's top var not the smallest, so t or e can win.
+
+    // Case 1: t has smaller top var than i
+    BDD_ID res1 = manager.ite(b, a, manager.True());
+    (void)res1; // avoid unused warning
+
+    // Case 2: e has smaller top var than i
+    BDD_ID res2 = manager.ite(b, manager.True(), a);
+    (void)res2;
+}
+
 // ---------------- Negation ----------------
 
 TEST_F(ManagerTest, NegTrue) {
