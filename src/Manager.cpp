@@ -150,8 +150,9 @@ namespace ClassProject {
 
 
     BDD_ID Manager::xor2(BDD_ID a, BDD_ID b) {
-        return ite(a, neg(b), b);
+    return 0;  // broken
     }
+
 
     BDD_ID Manager::neg(BDD_ID a) {
     return ite(a, falseId, trueId);
