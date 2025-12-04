@@ -3,6 +3,7 @@
 
 #include <gtest/gtest.h>
 #include "Manager.h"
+#include <fstream>
 
 using namespace ClassProject;
 
@@ -104,6 +105,20 @@ TEST_F(ManagerTest, IteTopVarSelection) {
     BDD_ID res2 = manager.ite(b, manager.True(), a);
     (void)res2;
 }
+
+TEST_F(ManagerTest, FindVarsOnCompositeFunction) {
+    // Build a composite BDD: f = a AND b
+    BDD_ID f = manager.and2(a, b);
+
+    std::set<BDD_ID> vars;
+    manager.findVars(f, vars);
+
+    // Should contain exactly the variables a and b
+    EXPECT_EQ(vars.size(), 2u);
+    EXPECT_TRUE(vars.count(a));
+    EXPECT_TRUE(vars.count(b));
+}
+
 
 // ---------------- Negation ----------------
 
@@ -239,5 +254,17 @@ TEST_F(ManagerTest, DeMorgan) {
     BDD_ID rhs = manager.or2(manager.neg(a), manager.neg(b));
     EXPECT_EQ(lhs, rhs);
 }
+
+TEST_F(ManagerTest, VisualizeBDDSmokeTest) {
+    BDD_ID f = manager.and2(a, b);
+
+    std::string path = "bdd_test.dot";
+    manager.visualizeBDD(path, f);
+
+    // Optional: just check file can be opened
+    std::ifstream in(path);
+    EXPECT_TRUE(in.is_open());
+}
+
 
 #endif
