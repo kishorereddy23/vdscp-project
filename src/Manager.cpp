@@ -85,14 +85,10 @@ namespace ClassProject {
 
 
     BDD_ID Manager::coFactorFalse(BDD_ID f, BDD_ID x) {
-        if (isConstant(f)) return f;
-        if (topVar(f) != x) {
-            BDD_ID highCofactor = coFactorFalse(uniqueTable[f].high, x);
-            BDD_ID lowCofactor = coFactorFalse(uniqueTable[f].low, x);
-            return findOrCreateNode(highCofactor, lowCofactor, topVar(f));
-        }
-        return uniqueTable[f].low;
+    // broken for TDD
+    return 1;
     }
+
 
     BDD_ID Manager::coFactorTrue(BDD_ID f) {
         if (isConstant(f)) return f;
