@@ -22,7 +22,7 @@ namespace ClassProject {
         BDD_ID low;         // Low successor (else branch)
         BDD_ID topVar;      // Top variable of this node
         std::string label;  // Label/name of the variable (optional)
-        
+
         BDDNode(BDD_ID id, BDD_ID high, BDD_ID low, BDD_ID topVar, const std::string& label = "")
             : id(id), high(high), low(low), topVar(topVar), label(label) {}
     };
