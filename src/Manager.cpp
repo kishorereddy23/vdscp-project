@@ -191,14 +191,10 @@ namespace ClassProject {
 
 
     void Manager::findVars(const BDD_ID &root, std::set<BDD_ID> &vars_of_root) {
-        std::set<BDD_ID> allNodes;
-        findNodes(root, allNodes);
-        for (BDD_ID node : allNodes) {
-            if (!isConstant(node)) {
-                vars_of_root.insert(topVar(node));
-            }
-        }
-    }
+    // broken for TDD
+    return;
+}
+
 
     void Manager::visualizeBDD(std::string filepath, BDD_ID &root) {
         std::ofstream file(filepath);
