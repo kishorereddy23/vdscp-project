@@ -10,9 +10,7 @@ namespace ClassProject {
     falseId = 0;
     uniqueTable.emplace_back(1, 1, 1, 1, "True");
     trueId = 1;
-}
-
-
+    }
 
     const BDD_ID &Manager::True() {
         return trueId;
@@ -37,12 +35,9 @@ namespace ClassProject {
     return newId;
     }
 
-
-
     BDD_ID Manager::topVar(BDD_ID f) {
-    // wrong for TDD
-    return 0
-}
+        return uniqueTable[f].topVar;
+    }
 
     std::string Manager::getTopVarName(const BDD_ID &root) {
         BDD_ID top = topVar(root);
