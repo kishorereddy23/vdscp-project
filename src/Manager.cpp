@@ -176,16 +176,10 @@ namespace ClassProject {
 
 
     void Manager::findNodes(const BDD_ID &root, std::set<BDD_ID> &nodes_of_root) {
-        if (nodes_of_root.find(root) != nodes_of_root.end()) {
-            return;
-        }
-        nodes_of_root.insert(root);
-        if (isConstant(root)) {
-            return;
-        }
-        findNodes(uniqueTable[root].high, nodes_of_root);
-        findNodes(uniqueTable[root].low, nodes_of_root);
-    }
+    // broken for TDD
+    return;
+}
+
 
     void Manager::findVars(const BDD_ID &root, std::set<BDD_ID> &vars_of_root) {
         std::set<BDD_ID> allNodes;
