@@ -150,9 +150,10 @@ namespace ClassProject {
     }
 
     BDD_ID Manager::neg(BDD_ID a) {
-    // broken for TDD
-    return a;
-}
+    return ite(a, falseId, trueId);
+    }
+
+
 
 
     BDD_ID Manager::nand2(BDD_ID a, BDD_ID b) {
