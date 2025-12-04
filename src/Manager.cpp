@@ -41,7 +41,7 @@ namespace ClassProject {
 
     BDD_ID Manager::topVar(BDD_ID f) {
     // wrong for TDD
-    return 0;
+    return 0
 }
 
     std::string Manager::getTopVarName(const BDD_ID &root) {
