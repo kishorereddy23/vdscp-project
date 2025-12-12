@@ -185,8 +185,23 @@ _Below is an example of how you can instruct your audience on installing and set
 <!-- ROADMAP -->
 ## Roadmap
 #### Part-1
-- [ ] TODO
-- [X] DONE
+#### Part-1
+
+- [X] Implement BDD manager (`Manager`) with:
+  - unique table and terminal nodes (False = 0, True = 1)
+  - variable creation (`createVar`) and basic queries (`isConstant`, `isVariable`, `topVar`, `getTopVarName`)
+  - core ITE operator and cofactors (`coFactorTrue/False`)
+  - Boolean operations (`and2`, `or2`, `xor2`, `neg`, `nand2`, `nor2`, `xnor2`)
+  - structural queries (`findNodes`, `findVars`, `uniqueTableSize`)
+  - visualization (`visualizeBDD` to DOT)
+
+- [X] Implement unit tests (`Tests.h`) using GoogleTest to cover:
+  - constants and variables
+  - ITE behavior and Boolean operations
+  - cofactors and structural queries
+  - basic equivalences (e.g. DeMorgan) and unique table reuse
+- [X] See also: [doc/Part1_Documentation.md]
+
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 #### Part-2
