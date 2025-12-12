@@ -1,0 +1,17 @@
+digraph BDD {
+  rankdir=TB;
+  0 [shape=box, label="0"];
+  1 [shape=box, label="1"];
+  5 [shape=ellipse, label="d"];
+  9 [shape=ellipse, label="c"];
+  10 [shape=ellipse, label="b"];
+  11 [shape=ellipse, label="a"];
+  5 -> 1 [style=solid];
+  5 -> 0 [style=dashed];
+  9 -> 5 [style=solid];
+  9 -> 0 [style=dashed];
+  10 -> 9 [style=solid];
+  10 -> 0 [style=dashed];
+  11 -> 9 [style=solid];
+  11 -> 10 [style=dashed];
+}
