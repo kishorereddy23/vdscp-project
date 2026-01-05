@@ -2,6 +2,7 @@
 //
 // Created by Markus Wedler 2014
 
+
 #ifndef VDSPROJECT_MANAGER_H
 #define VDSPROJECT_MANAGER_H
 
@@ -11,7 +12,42 @@
 #include <unordered_map>
 #include <set>
 
+
 namespace ClassProject {
+
+    
+
+    struct UniqueKey {
+        BDD_ID topVar, high, low;
+        bool operator==(const UniqueKey& o) const {
+            return topVar == o.topVar && high == o.high && low == o.low;
+        }
+    };
+
+    struct UniqueKeyHash {
+        std::size_t operator()(const UniqueKey& k) const {
+            std::size_t h1 = std::hash<BDD_ID>{}(k.topVar);
+            std::size_t h2 = std::hash<BDD_ID>{}(k.high);
+            std::size_t h3 = std::hash<BDD_ID>{}(k.low);
+            return ((h1 * 16777619u) ^ (h2 * 2166136261u)) ^ h3;
+        }
+    };
+
+    struct IteKey {
+        BDD_ID i, t, e;
+        bool operator==(const IteKey& other) const {
+            return i == other.i && t == other.t && e == other.e;
+        }
+    };
+
+    struct IteKeyHash {
+        std::size_t operator()(const IteKey& k) const {
+            std::size_t h1 = std::hash<BDD_ID>{}(k.i);
+            std::size_t h2 = std::hash<BDD_ID>{}(k.t);
+            std::size_t h3 = std::hash<BDD_ID>{}(k.e);
+            return ((h1 * 1315423911u) ^ (h2 * 2654435761u)) ^ h3;
+        }
+    };
 
     /**
      * @brief Structure representing a single BDD node in the unique table
@@ -38,10 +74,16 @@ namespace ClassProject {
 
         BDD_ID findOrCreateNode(BDD_ID high, BDD_ID low, BDD_ID topVar);
         BDD_ID getTopVar(BDD_ID i, BDD_ID t, BDD_ID e);
+        std::unordered_map<UniqueKey, BDD_ID, UniqueKeyHash> uniqueIndex;
+        std::unordered_map<IteKey,    BDD_ID, IteKeyHash>    computedTable;
+
+
 
     public:
         Manager();
         ~Manager() = default;
+        void debugPrintNode(BDD_ID id);
+
 
         BDD_ID createVar(const std::string &label) override;
         const BDD_ID &True() override;

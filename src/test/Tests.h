@@ -131,8 +131,19 @@ TEST_F(ManagerTest, NegFalse) {
 }
 
 TEST_F(ManagerTest, DoubleNeg) {
-    EXPECT_EQ(manager.neg(manager.neg(a)), a);
+    BDD_ID na  = manager.neg(a);
+    BDD_ID nna = manager.neg(na);
+
+    std::cout << "\n[DEBUG] a:   ";
+    manager.debugPrintNode(a);
+    std::cout << "[DEBUG] ~a:  ";
+    manager.debugPrintNode(na);
+    std::cout << "[DEBUG] ~~a: ";
+    manager.debugPrintNode(nna);
+
+    EXPECT_EQ(nna, a);
 }
+
 
 // ---------------- Binary logic ops: and/or/xor/xnor ----------------
 

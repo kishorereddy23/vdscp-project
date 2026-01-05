@@ -1,0 +1,20 @@
+Variable Node: 82 Top Var Id: 3 Top Var Name: 108 Low: 80 High: 81
+Variable Node: 81 Top Var Id: 7 Top Var Name: 102 Low: 1 High: 80
+Variable Node: 80 Top Var Id: 11 Top Var Name: 95 Low: 78 High: 79
+Variable Node: 79 Top Var Id: 12 Top Var Name: 89 Low: 1 High: 78
+Variable Node: 78 Top Var Id: 16 Top Var Name: 82 Low: 76 High: 77
+Variable Node: 77 Top Var Id: 17 Top Var Name: 76 Low: 1 High: 76
+Variable Node: 76 Top Var Id: 21 Top Var Name: 69 Low: 74 High: 75
+Variable Node: 75 Top Var Id: 22 Top Var Name: 63 Low: 1 High: 74
+Variable Node: 74 Top Var Id: 26 Top Var Name: 56 Low: 72 High: 73
+Variable Node: 73 Top Var Id: 27 Top Var Name: 50 Low: 1 High: 72
+Variable Node: 72 Top Var Id: 31 Top Var Name: 43 Low: 70 High: 71
+Variable Node: 71 Top Var Id: 32 Top Var Name: 37 Low: 1 High: 70
+Variable Node: 70 Top Var Id: 36 Top Var Name: 30 Low: 68 High: 69
+Variable Node: 69 Top Var Id: 37 Top Var Name: 24 Low: 1 High: 68
+Variable Node: 68 Top Var Id: 41 Top Var Name: 17 Low: 49 High: 67
+Variable Node: 67 Top Var Id: 42 Top Var Name: 11 Low: 1 High: 49
+Variable Node: 49 Top Var Id: 46 Top Var Name: 4 Low: 0 High: 48
+Variable Node: 48 Top Var Id: 47 Top Var Name: 1 Low: 1 High: 0
+Terminal Node: 1
+Terminal Node: 0

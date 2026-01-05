@@ -5,3 +5,9 @@ gtest/
 *.a
 *.log
 .idea/
+# CMake build dirs
+cmake-build-debug/
+cmake-build-release/
+
+# BDD visualization / benchmark artifacts
+*.dot
